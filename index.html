@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INTRACTIVE CARD</title>
+
+    <style>
+        body{
+            margin: 10px;
+            padding: 0px;
+            
+        }
+       
+        .card{
+            height: 450px;
+            padding:20px;
+            box-shadow: 0px 0px 10px 1px #59555563;
+            width: 25%;
+            margin: 4% auto;
+            border-radius: 4px;
+            
+        }
+
+        .img{
+            width: 200px;
+            display: block;
+            margin: 0px auto;
+            border-radius: 5px;
+        }
+
+        .prod-name{
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 6px;
+        }
+
+        .price{
+            margin-top: 0;
+            font-size: 20px;
+           text-align: center;
+           margin-bottom: 10px;
+        }
+
+        .quantity-card{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 18px;
+        }
+
+        .logo{
+            width: 30px;
+            padding-left: 6%;
+            padding-right: 6%;
+            cursor: pointer;
+        }
+
+        #quantity{
+            font-weight:300;
+            font-size: 22px;
+        }
+
+        .buy-btn{
+            display: block;
+            margin: 10px auto;
+            margin-bottom: 10px;
+            width: 60%;
+            padding: 10px;
+            border-radius: 10px;
+            border: 2px solid #908c87;
+            background-color:#0e0d0d;
+            color: rgb(252, 249, 245);
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+
+        }
+
+    </style>
+</head>
+<body>
+   
+    <div class="card">
+        <img src="jacket.jpg" alt="" class="img">
+        <p class="prod-name">Mens Jacket<b>  <br/> <br/>₹ </b>799</p>
+    
+        <div class="quantity-card">
+            <img src="minus-logo.png" alt="" class="logo" onclick="decrement()">
+            <span id="quantity">1</span>
+            <img src="add-logo.png" alt="" class="logo" onclick="increment()">
+        </div>
+        <div >
+            <button class="buy-btn">Buy Now</button>
+        </div>
+
+     </div>
+
+
+     <script>
+
+        const quantityElement = document.getElementById("quantity");
+
+        function decrement(){
+            let quantity = parseInt(quantityElement.innerText);
+
+            if(quantity>1){
+            quantityElement.innerText = -- quantity;
+
+            }
+        }
+
+        function increment(){
+            let quantity = parseInt(quantityElement.innerText);
+            quantityElement.innerText = ++quantity;
+        }
+     </script>
+</body>
+</html>
